@@ -1,10 +1,10 @@
-  body{
-    background-color: #ffffff;
+body{
+  background-image: linear-gradient(to bottom, #ffffff, #e9e4ff, #d5c9ff, #c0aeff, #ac93ff);
 }
 
-  .resume{
-    width: 40%;
-    height: 40%;
+.resume{
+  width: 40%;
+  height: 40%;
 }
 
   .head{
@@ -14,7 +14,7 @@
 }
 
   form{
-    background-color: rgb(227, 231, 233);
+    background-color: #F1D6FE;
     width: 600px;
     text-align: left;
     border-radius: 5%;
@@ -61,7 +61,7 @@
 }
 
   li a:hover:not(.active) {
-  background-color:yellow;
+  background-color:#C357F5;
   color: black;
 }
 
