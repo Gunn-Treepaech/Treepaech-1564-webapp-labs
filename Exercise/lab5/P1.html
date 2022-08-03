@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treepaech</title>
+</head>
+<body>
+    <div class="dataInput">
+        <script>
+            let userNum = prompt("Type Your Number");
+            let nubPrims = 0;
+            let arr = "For n = " + userNum + " prime numbers are ";
+            showPrimes(userNum)
+            if (Math.sign(negative) == true){
+                function showPrimes(n){
+                for (let i = 2; i < n; i++){
+                    if (!isPrime(i)) continue;
+                    arr += String(i);
+                    if (true){
+                        nubPrims += 1;
+                    }
+                }
+                alert(arr);
+            }
+            function isPrime(n){
+                for (let i = 2; i < n; i++){
+                    if (n % i == 0) return false;
+                }
+                return true;
+            }
+            }
+            else{
+                let userNum = prompt("Type Your Number");
+            }
+        </script>
+    </div>
+    
+</body>
+</html>
