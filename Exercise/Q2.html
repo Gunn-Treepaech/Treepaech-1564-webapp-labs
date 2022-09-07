@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Challenge: ID changer</title>
+        <style>
+            #id-card {
+                border:1px solid black;
+                border-radius:5px;
+                width: 400px;
+                font-family: monospace;
+                padding: 6px;
+                background: rgb(201, 255, 224);
+            }
+            #id-name {
+                float: right;
+            }
+            image{
+                width: 25%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="id-card" style="">
+            <h3>KKU identification card</h3>
+            <img src="https://upload.wikimedia.org/wikipedia/th/thumb/1/1f/Khon_Kaen_University_Logo.svg/200px-Khon_Kaen_University_Logo.svg.png?20220806044139">
+            <h1 id="id-name">First last</h1>
+        </div>
+        
+    <script>
+       const nameUser =  document.getElementById("id-name");
+       nameUser.innerHTML = "Treepaech Treechan"
+       console.log("633040156-4");
+    </script>
+    </body>
+</html>
