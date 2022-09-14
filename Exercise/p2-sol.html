@@ -17,17 +17,22 @@
         id="cat"
         src="https://www.kasandbox.org/programming-images/misc/cat-walk.gif"
       />
+      <p id="infom"></p>
     </div>
 
     <script>
-      var catEl = document.getElementById("cat");
+      let catEl = document.getElementById("cat");
 
-      var startTime = new Date().getTime();
-      var walkTheCat = function () {
-        var currTime = new Date().getTime();
-        var secondsElapsed = (currTime - startTime) / 1000;
+      let startTime = new Date().getTime();
+      let walkTheCat = function () {
+        let currTime = new Date().getTime();
+        let secondsElapsed = (currTime - startTime) / 1000;
+        let newCatLeft = secondsElapsed * 100;
+        catEl.style.left = newCatLeft + "px";
+        if (newCatLeft < 1000) {
+          window.requestAnimationFrame(walkTheCat);
+        }
       };
-
       walkTheCat();
     </script>
   </body>
