@@ -1,41 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Treepaech DEMO P3</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        function cylinder(radius, height){
-            this.radius = radius;
-            this.height = height;
-            this.volume = function()
-            {
-                return Math.PI * radius * radius * height;
-            }
-        }
-        radius = Number(prompt("Enter the radius of a cylinder"));
-        height = Number(prompt("Enter the height of a cylinder"));
-        let c = new cylinder(radius,height);
-        alert('The volume of a cylinder is ' + c.volume().toFixed(4))
+      function cylinder(radius, height) {
+        this.radius = radius;
+        this.height = height;
+        this.volume = function () {
+          return Math.PI * radius * radius * height;
+        };
+      }
+      radius = Number(prompt("Enter the radius of a cylinder"));
+      height = Number(prompt("Enter the height of a cylinder"));
+      let c = new cylinder(radius, height);
+      alert("The volume of a cylinder is " + c.volume().toFixed(4));
 
-        var Song = function(title,artist){
-    this.title = title;
-    this.artist = artist; 
-    this.play = function()
-    {
-        return console.log('Playing: ' + artist + ' by ' + title);
-    }
-}
+      var Song = function (title, artist) {
+        this.title = title;
+        this.artist = artist;
+        this.play = function () {
+          return console.log("Playing: " + artist + " by " + title);
+        };
+      };
 
-var song1 = new Song('Money', 'Lisa');
-var song2 = new Song('ชีวิตยังคงสวยงาม', 'Bodyslam');
-song1.title;
-song1.play();
-song2.play();
-
+      var song1 = new Song("Money", "Lisa");
+      var song2 = new Song("ชีวิตยังคงสวยงาม", "Bodyslam");
+      song1.title;
+      song1.play();
+      song2.play();
     </script>
-    
-</body>
+  </body>
 </html>

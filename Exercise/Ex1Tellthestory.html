@@ -21,15 +21,16 @@
     </p>
 
     <script>
-      var libButton = document.getElementById('lib-button');
-      var libIt = function() {
-            let noun = document.getElementById('noun').value;
-            let adjective = document.getElementById('adjective').value;
-            let person = document.getElementById('person').value;
-            var storyDiv = document.getElementById("story");
-            storyDiv.innerHTML = person + " is " + adjective + " and loves to eat " + noun;
+      var libButton = document.getElementById("lib-button");
+      var libIt = function () {
+        let noun = document.getElementById("noun").value;
+        let adjective = document.getElementById("adjective").value;
+        let person = document.getElementById("person").value;
+        var storyDiv = document.getElementById("story");
+        storyDiv.innerHTML =
+          person + " is " + adjective + " and loves to eat " + noun;
       };
-      libButton.addEventListener('click', libIt);
+      libButton.addEventListener("click", libIt);
     </script>
   </body>
 </html>
