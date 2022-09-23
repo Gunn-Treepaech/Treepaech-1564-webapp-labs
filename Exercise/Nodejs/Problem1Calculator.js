@@ -5,10 +5,10 @@ let yourCal = readline.createInterface({
     output:process.stdout
 })
 yourCal.question(`add | subtract : `,uCal =>{
-    if (uCal == 'add'){
+    if (uCal.toLowerCase() == 'add'){
         console.log(`${args[0]} + ${args[1]} = ${Number(args[0])  + Number(args[1])}`)
     }
-    else if (uCal == 'subtract'){
+    else if (uCal.toLowerCase() == 'subtract'){
         console.log(`${args[0]} - ${args[1]} = ${Number(args[0])  - Number(args[1])}`)
     }
     else{

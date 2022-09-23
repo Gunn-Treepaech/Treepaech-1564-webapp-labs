@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>parse-students-file</title>
+  </head>
+  <body>
+    <h1>Reading Students Information</h1>
+    <p id="content"></p>
+    <script>
+      fetch("/lab7/students.json")
+        .then((response) => response.json())
+        .then((data) => {
+            const wclass = data.wclass;
+            let num = 1;
+            let text = document.getElementById("content");
+            for (let students of wclass){
+              text.innerHTML +=
+                    num + ". " +
+                    students.student["@attributes"].id +
+                    " <b>" + students.student.name + "</b> " +
+                    " has skills " +
+                    " <i>" + students.student.skill +  "</i> " +
+                    "<br/>"
+                    num++;
+            }
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>parse-places</title>
+    <style>
+        .tap{
+            color:  green;
+            margin-left: 15px;
+        }
+        .test{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <p id="content"></p>
+    <script>
+        fetch("/lab7/places.json")
+        .then((response) => response.json())
+        .then((data) => {
+            let results = data.results;
+            let num = 1;
+            let text = document.getElementById("content");
+            for (let place of results){
+                text.innerHTML +=
+                    num + "<span class='test'>" +". name = " + place.name + "</span>" + "<br/>" +
+                    "<span class='tap'>" + "location = " + place.geometry["location"].lat + 
+                    " " + place.geometry["location"].lng + "</span>" + 
+                    "<br/>"
+                    num++;
+            }
+        });
+    </script>
+</body>
+</html>
