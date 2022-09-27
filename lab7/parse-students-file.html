@@ -7,23 +7,21 @@
   </head>
   <body>
     <h1>Reading Students Information</h1>
-    <p id="content"></p>
+    <ol id="content"></ol>
     <script>
       fetch("/lab7/students.json")
         .then((response) => response.json())
         .then((data) => {
             const wclass = data.wclass;
-            let num = 1;
             let text = document.getElementById("content");
             for (let students of wclass){
               text.innerHTML +=
-                    num + ". " +
+                    "<li>" +
                     students.student["@attributes"].id +
                     " <b>" + students.student.name + "</b> " +
                     " has skills " +
                     " <i>" + students.student.skill +  "</i> " +
-                    "<br/>"
-                    num++;
+                    "</li>"
             }
         });
     </script>
