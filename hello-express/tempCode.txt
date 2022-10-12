@@ -1,0 +1,26 @@
+/*let app = express()
+app.get('/hello', function(req, res){
+    res.send('Hello World');
+});
+app.post('/hello', function(req, res){
+    res.send('You just called the method post at /hello');
+});
+app.listen(3000);*/
+
+import axios from 'axios'
+async function makeGetRequest(){
+    let res = await axios.get("https://jsonplaceholder.typicode.com/posts");
+    let results = resp.data;
+    for (let result of results){
+        console.log("%d %s", result.id, result.title);
+    }
+}
+
+let user = JSON.parse(data);
+        delete users["user" + req.params.id];
+        console.log(users);
+        res.set('Content-Type', 'application/json')
+        res.end(JSON.stringify(users));
+        fs.writeFile('user.json', JSON.stringify(user), function(err){
+            if(err) throw err;
+        })

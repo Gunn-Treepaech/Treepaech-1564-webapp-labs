@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .promise-avatar-example {
+        border: 5px solid rgb(0, 255, 204);
+        border-radius: 50%;
+        width: 200px;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .username {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      fetch(
+        /* "/Exercise/mygithub.json"*/ "https://api.github.com/users/gunn-Treepaech"
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          let name = document.createElement("h1");
+          let link = document.createElement("a");
+          link.innerHTML = data.name;
+          link.href = data.html_url;
+          link.target = "_blank";
+          name.appendChild(link);
+          name.className = "username";
+          document.body.append(name);
+          console.log(name);
+
+          let img = document.createElement("img");
+          img.src = data.avatar_url;
+          img.className = "promise-avatar-example";
+          document.body.append(img);
+          console.log(img);
+        });
+    </script>
+  </body>
+</html>
