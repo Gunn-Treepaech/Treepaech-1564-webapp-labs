@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Prob2 by Treepaech Treechan 156-4</title>
+    <link href="treepaech.nytimes.css"stylesheet" />
+  </head>
+  <body>
+    <h1>The New York Times Hardcover Fiction Best Sellers List</h1>
+    <div class="wrapper">
+      <div class="controls">
+        <form>
+          <p>
+            <label for="search-date">Enter date:</label>
+            <input
+              type="date"
+              id="search-date"
+              class="search-date"
+              pattern="[0-9]{8}"
+            />
+          </p>
+          <p><button class="submit">Submit search</button></p>
+        </form>
+      </div>
+      <div class="results">
+        <section></section>
+      </div>
+    </div>
+    <script>
+      // Defining a baseURL and key to as part of the request URL
+      let baseURL = "https://api.nytimes.com/svc/books/v3/lists/<date>/hardcover-fiction.json";
+      let key = "DSC3l7tncGr1AyeJriQen2hkPMR9enHl";
+      let url;
+      let startDate = document.querySelector(".search-date");
+      let searchForm = document.querySelector("form");
+      let section = document.querySelector("section");
+      searchForm.addEventListener("submit", submitSearch);
+      function submitSearch(e){
+        fetchResults(e);
+      }
+      function fetchResults(e){
+        e.preventDefault();
+        url = baseURL + '?api-key=' + key;
+        //console.log(url);
+        fetch(url).then(function(result){
+          return result.json();
+        }).then (function(json){
+          displayResults(json);
+        });
+
+        function displayResults(json){
+            //console.log(json);
+            let books = json.results.books;
+            //console.log(books);
+
+            if(books.length == 0){
+                let para = document.createElement('p');
+                para.textContent = 'No results returned.'
+                section.appendChild(para);
+            } else 
+            {
+                for (let i = 0; i < books.length; i++){
+                    let div = document.createElement('div');
+                    let title = document.createElement('h4');
+                    let img = document.createElement('img');
+                    let link = document.createElement('a');
+                    let buyLink = document.createElement('a');
+                    let para = document.createElement('p');
+                    
+                    let current = books[i];
+                    //console.log(current);
+
+                    link.href = current.amazon_product_url;
+                    link.textContent = i+1 + ". " + current.title;
+                    img.src = current.book_image;
+
+                    console.log(current.buy_links[0].name);
+
+                    for (let j = 0; j < current.buy_links.length; j++){
+                        let linkbook = document.createElement('span');
+                        linkbook.textContent = current.buy_links.name;
+                        para.appendChild(linkbook);
+                    }
+              
+                    title.appendChild(link);
+                    div.appendChild(title);
+                    div.appendChild(img);
+                    div.appendChild(para);
+                    section.appendChild(div);
+                }
+            } 
+        }
+        }
+    </script>
+  </body>
+</html>

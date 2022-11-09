@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add athletes</title>
+</head>
+<body>
+    <center>
+    <h1>Add athletes</h1>
+    <label for="name">name:</label>
+    <input type="text" id="name" name="name"><br><br>
+    <label for="sport">sport:</label>
+    <input type="text" id="sport" name="sport"><br><br>
+    <button onclick="test()">Submit</button>
+    </center>
+    <script>
+        function test(){
+            let name = document.getElementById("name").value;
+            let sport = document.getElementById("sport").value;
+            console.log(sport);
+        }
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prob1 by Treepaech Treechan 156-4</title>
+    <style>
+        .header{
+            background-color: yellow;
+        }
+        .textleft{
+            text-align: right;
+        }
+        td{
+            color: blue;
+        }
+        #userAnswer{
+            background-color: green;
+            border: none;
+        }
+        @media screen and (max-width: 700px) {
+            .tableA{
+                font-size: 95%;
+            }
+        }  
+    </style>
+</head>
+<body>
+    <center>
+    <div class="header">
+        <h1>Simple Adder Quiz</h1>
+    </div>
+    <h2>What is the result of adding these two numbers?</h2>
+    </center>
+      <table style="width: 100%;" class="tableA">
+        <tr>
+            <td class="Header">Random Number1</td>
+            <td style="color: black;" class="textleft" id="random1"></td>
+        </tr>
+        <tr>
+            <td class="Header">Random Number2</td>
+            <td style="color: black;" class="textleft" id="random2"></td>
+        </tr>
+        <tr>
+            <td class="Header">Your answer</td>
+            <td class="textleft"><input id="userAnswer" type="text" size="4"></td>
+        </tr>
+    </table>
+      <script>
+        function random(number) {
+            return Math.floor(Math.random() * number);
+        }
+        let random1 = document.getElementById("random1");
+        let numran1 = random1.innerText = random(10);
+        let random2 = document.getElementById("random2");
+        let numran2 = random2.innerText = random(10);
+        let cAnswer = Number(numran1) + Number(numran2);
+        let userAnswer = document.getElementById("userAnswer").value;
+        console.log(userAnswer);
+      </script>
+</body>
+</html>
